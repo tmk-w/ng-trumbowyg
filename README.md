@@ -1,27 +1,48 @@
 # NgTrumbowyg
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
+NgTrumbowyg is an angular 5 implementation for Trumbowyg WYSIWYG editor. Requires ```trumbowyg``` package from npm.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Install npm module:
 
-## Code scaffolding
+```
+npm install ng-trumbowyg
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Modify ```assets``` and ```styles``` section in ```.angular.cli.json```
 
-## Build
+```js
+"assets": [
+      "assets",
+      { "glob": "icons.svg", "input": "../node_modules/trumbowyg/dist/ui/", "output": "./trumbowyg/" }
+    ]
+...
+"styles": [
+        "styles.scss",
+        "../node_modules/trumbowyg/dist/ui/trumbowyg.min.css"
+      ]
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+3.Add TrumbowygModule to the main module
 
-## Running unit tests
+```js
+import { TrumbowygModule } from 'ng-trumbowyg';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+imports: [
+        TrumbowygModule,
+        ...
+    ]
+```
 
-## Running end-to-end tests
+4. Usage
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```html
+<ng-trumbowyg [(ngModel)]="property"></ng-trumbowyg>
+```
 
-## Further help
+5. Properties
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- placeholder - type: string, default: null, description: Text for the input
+- disabled - type: boolean, default: false, description: Whether to disable editor 
+
