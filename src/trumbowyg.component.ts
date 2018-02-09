@@ -5,7 +5,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { setTimeout } from 'timers';
 
 @Component({
-  selector: 'sf-trumbowyg',
+  selector: 'ng-trumbowyg',
   templateUrl: './trumbowyg.component.html',
   styleUrls: ['./trumbowyg.component.scss'],
   providers: [{
