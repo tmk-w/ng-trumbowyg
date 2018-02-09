@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tomasz Wnuk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmk9/ng-trumbowyg"
+  },
   "license": "ISC",
   "dependencies": {
     "trumbowyg": "^2.9.4"
