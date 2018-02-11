@@ -24,7 +24,7 @@ npm install ng-trumbowyg
       ]
 ```
 
-3.Add TrumbowygModule to the main module
+3. Add TrumbowygModule to the main module
 
 ```js
 import { TrumbowygModule } from 'ng-trumbowyg';
@@ -35,13 +35,13 @@ imports: [
     ]
 ```
 
-4. Usage
+## Usage
 
 ```html
 <ng-trumbowyg [(ngModel)]="property"></ng-trumbowyg>
 ```
 
-5. Properties
+## Properties
 
 - placeholder - type: string, default: null, description: Text for the input
 - disabled - type: boolean, default: false, description: Whether to disable editor 
