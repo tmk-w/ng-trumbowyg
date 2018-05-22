@@ -69,12 +69,15 @@ export class TrumbowygComponent implements AfterViewInit, ControlValueAccessor {
 
   private addCallbacks() {
     $(this.trumbowyg.nativeElement).trumbowyg()
-    .on('tbwblur', this.touched)
-    .on('tbwchange', () => {
-      const value = $(this.trumbowyg.nativeElement).trumbowyg('html');
-      this.changed(value);
-    });
-}
+      .on('tbwblur', this.touched)
+      .on('tbwpaste', this.valueChanged)
+      .on('tbwchange', this.valueChanged);
+  }
+
+  private valueChanged = () => {
+    const value = $(this.trumbowyg.nativeElement).trumbowyg('html');
+    this.changed(value);
+  }
 
   registerOnChange(fn: any) {
     this.changed = fn;
